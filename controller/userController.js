@@ -113,10 +113,18 @@ async function register(req, res) {
 
 async function login(req, res) {
   const { email, password } = req.body;
-  if (!email || !password) {
+   if (!email && !password) {
     return res
       .status(StatusCodes.BAD_REQUEST)
       .json({ msg: "Please enter both email and password" });
+  } else if (!email) {
+    return res
+      .status(StatusCodes.BAD_REQUEST)
+      .json({ msg: "Please enter your email" });
+  } else if (!password) {
+    return res
+      .status(StatusCodes.BAD_REQUEST)
+      .json({ msg: "Please enter your password" });
   }
   try {
     const [user] = await connection.query(
