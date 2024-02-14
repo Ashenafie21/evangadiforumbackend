@@ -12,7 +12,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// const port = process.env.PORT;
+const port = 5500;
 //  connection
 
 const connection = require("./db/dbConfig");
