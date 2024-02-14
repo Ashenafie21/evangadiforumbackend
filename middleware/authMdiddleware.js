@@ -13,7 +13,7 @@ const token = authHeader.split(' ')[1]
 // console.log(authHeader);
 // console.log(token);
 try {
-    const { username, consumerid } = jwt.verify(token, process.env.JWT_SECRET);
+    const { username, consumerid } = jwt.verify(token,'p27rnyhNO92AOGr8Qc7BJKwThg9ME9fE59h26');
     // return res.status(StatusCodes.OK).json({data}) // check if the it returns the data
       req.user = { username, consumerid }
       next()
