@@ -1,10 +1,10 @@
 const mysql2 = require("mysql2");
 const connection = mysql2.createPool({
-  socketPath: "/Applications/MAMP/tmp/mysql/mysql.sock",
-  user: process.env.USERNAME,
-  database: process.env.DATABASE,
-  host: '154.56.47.154',
-  password: process.env.PASSWORD,
+  // socketPath: process.env.SOCKET_PATH,
+  user: 'u498923693_Ashe',
+  database:'u498923693_Evangadiforum',
+  host: 'srv1101.hstgr.io',
+  password: '9P._EF$-KPhVnE%',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

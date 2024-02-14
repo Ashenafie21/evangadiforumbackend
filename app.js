@@ -3,7 +3,15 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-app.use(cors());
+const corsOptions = {
+  // origin: "http://localhost:5173",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  credentials: true, 
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
+
 const port = process.env.PORT;
 //  connection
 
