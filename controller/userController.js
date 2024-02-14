@@ -138,7 +138,7 @@ async function login(req, res) {
     }
     const username = user[0].username;
     const consumerid = user[0].consumerid;
-    const token = jwt.sign({ username, consumerid }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ username, consumerid }, 'p27rnyhNO92AOGr8Qc7BJKwThg9ME9fE59h26', {
       expiresIn: "1day",
     });
 
