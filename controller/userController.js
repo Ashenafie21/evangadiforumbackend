@@ -135,14 +135,14 @@ async function login(req, res) {
     if (user.length == 0) {
       return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({ msg: "Incorrect email " });
+        .json({ msg: "Incorrect email or password " });
     }
     //compare password
     const isMatch = await bcrypt.compare(password, user[0].password);
     if (!isMatch) {
       return res
         .status(StatusCodes.BAD_REQUEST)
-        .json({ msg: "Incorrect password" });
+        .json({ msg: "Incorrect email or password" });
     }
     const username = user[0].username;
     const consumerid = user[0].consumerid;
